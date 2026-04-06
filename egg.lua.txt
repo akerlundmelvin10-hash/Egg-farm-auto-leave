@@ -1,0 +1,16 @@
+local plr = game:GetService("Players").LocalPlayer
+local playerGui = plr.PlayerGui
+
+-- keeps checking for the popup
+while true do
+    task.wait(1)
+    for _, gui in pairs(playerGui:GetDescendants()) do
+        if gui:IsA("TextButton") then
+            local text = gui.Text:lower()
+            if text:find("yes") or text:find("still here") or text:find("continue") then
+                gui.MouseButton1Click:Fire()
+                print("Dismissed AFK popup")
+            end
+        end
+    end
+end
