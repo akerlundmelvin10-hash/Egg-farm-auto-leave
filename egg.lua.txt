@@ -1,14 +1,1 @@
-local plr = game:GetService("Players").LocalPlayer
-local playerGui = plr.PlayerGui
 
-while true do
-    task.wait(1)
-    for _, gui in pairs(playerGui:GetDescendants()) do
-        if gui:IsA("TextButton") then
-            if gui.Text:upper() == "YES" then
-                gui.MouseButton1Click:Fire()
-                print("Clicked YES on AFK popup")
-            end
-        end
-    end
-end
